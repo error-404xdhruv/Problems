@@ -5,46 +5,42 @@
 
 using namespace std ;
 
+
+int getSum(int n)
+{
+        int sum = 0;
+        while (n != 0)
+        {
+            sum = sum + n % 10;
+            n = n / 10;
+        }
+        return sum;
+}
+
 int main(int argc, char const *argv[])
 {
-    int n ;
-    cin >> n ;
-    int array[n] ;
+    int testCases ;
+    cin >> testCases ;
 
-    for (int i = 0; i < n; i++)
+    int array [testCases] ;
+    for (int i = 0; i < testCases; i++)
     {
         cin >> array [i] ;
     }
-    
-    for (auto x : array)
+
+    for (int i = 0; i < testCases; i++)
     {
-        int sum = 0 ;
-        int sum2 = 0 ;
-        int interestingNum = 0 ;
-        for (int i = 1; i < x; i++)
+        int flag = 0;
+        for (int j = 8; j <= array[i]; j++)
         {
-            int next = i+1 ;
-            
-            for (int j = i; j/10 != 0 ;)
+            if (getSum(j) > getSum(j+1))
             {
-                sum = sum + (j % 10) ;
-                j /= 10 ;
+                flag ++ ;
             }
             
-            for (int k = (i+1); k/10 != 0 ;)
-            {
-                sum = sum + (k % 10) ;
-                k /= 10 ;
-            }
         }
-        if (sum > sum2)
-        {
-            interestingNum ++ ;
-        }
-        cout << interestingNum << endl ;       
-        
+        cout << flag << endl ;
     }
-    
 
     return 0;
 }
