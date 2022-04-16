@@ -1,16 +1,23 @@
 
 // Number of 1 Bits
 
-#include <iostream>
-#include <cstdio>
-#include <cstring>
-#include <string>
-
-using namespace std ;
-
-int main(int argc, char const *argv[])
+/*
+class Solution
 {
-    
+public:
+    int hammingWeight(uint32_t n)
+    {
+        int count = 0;
+        while (n != 0)
+        {
+            if (n & 1 == 1)
+            {
+                count ++ ;
+            }
+            n = n >> 1 ;
+        }
+        return count ;
+    }
+};
 
-    return 0;
-}
+*/
