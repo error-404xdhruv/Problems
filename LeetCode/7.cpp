@@ -1,37 +1,32 @@
 
-// palindrome Number
+// reverse integer
 
 #include <iostream>
 #include <cstdio>
+#include <math.h>
 #include <cstring>
 #include <string>
-#include <math.h>
 
 using namespace std ;
 
 int main(int argc, char const *argv[])
 {
-    int x ;
-    cin >> x ;    
-    int count = 0;
-    int x1 = x ;
-    while (x1 != 0)
+    int x;
+    cin >> x ;
+
+    int ans = 0;
+    while (x!=0)
     {
-        x1/=10;
-        if (x1 != 0)
+        if (ans > (INT_MAX/10) || ans < (INT_MIN/10))
         {
-            count++ ;
+            return 0;
+        }
+        else
+        {  
+            ans = ans*10 + (x%10);
+            x /= 10;
         }
     }
-    double newNum = 0 ;
-    int rem = 0;
-    int x2 = x;
-    for ( ;x2 != 0; x2/=10)
-    {
-        rem = x2%10 ;
-        newNum += rem*pow(10,count) ;
-        count-- ;
-    }
-    cout << newNum << endl ;
-    return 0;
+    return ans ;
+
 }
