@@ -1,5 +1,10 @@
 
 // complement of Base 10 integer
+/*
+this method is the most lay man approach, this question can be done using two more methods :
+1. using XOR operator (found in the discussions of this question)
+2. using masking (done by luv babbar)
+*/
 
 #include <iostream>
 #include <cstdio>
