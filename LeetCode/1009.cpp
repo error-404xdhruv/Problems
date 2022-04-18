@@ -1,5 +1,5 @@
 
-// complement of base 10 integer
+// complement of Base 10 integer
 
 #include <iostream>
 #include <cstdio>
@@ -11,24 +11,26 @@ using namespace std ;
 
 int main(int argc, char const *argv[])
 {
-    int x;
-    cin >> x;
+    int num ;
+    cout << "Enter the number: " ;
+    cin >> num ;
 
-    int num = x;
-    int rem = 0;
+    // part 1: decimal to binary
+    int binary = 0;
     int count = 0;
     while (num != 0)
     {
-        rem = rem + (num%2)*pow(10,count) ;
-        num/= 2;
+        binary = binary + (num%2)*pow(10,count) ;
+        num /= 2 ;
         count++ ;
     }
+    cout << binary << endl;
 
-    int n = rem;
-    int digit = 0, newNum = 0;
-    while (n!=0)
+    // part 2: find complement
+    int digit, complement = 0, count2= 0;
+    while (binary!=0)
     {
-        digit = n%10;
+        digit = binary%10;
         if (digit == 1)
         {
             digit = 0;
@@ -37,20 +39,21 @@ int main(int argc, char const *argv[])
         {
             digit = 1;
         }
-        newNum = newNum*10 + digit ;
-        n/=10;
+        complement = complement + (digit)*pow(10, count2) ;
+        count2++ ;
+        binary /= 10;
     }
+    cout << complement << endl;
 
-    int y = newNum;
-    int count1 = 0, sum1 = 0;
-    while (y!=0)
+    // part 3: complement (binary) to decimal
+    int ans = 0 , count3 = 0;
+    while (complement != 0)
     {
-        sum1 += (y%10)*pow(2,count1);
-        y/=10;
-        count1++ ;
+        ans = ans + (complement%10)*pow(2,count3) ;
+        complement /= 10 ;
+        count3++;
     }
-    cout << sum1 << endl ;
-
+    cout << ans << endl;
 
     return 0;
 }
