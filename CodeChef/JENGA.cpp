@@ -1,27 +1,25 @@
 #include <iostream>
-#include <cstdio>
-using namespace std ;
-
-int main(int argc, char const *argv[])
+using namespace std;
+int main()
 {
-    int T;
+    int N, X, T;
     cin >> T;
-    int array1[10000] , array2[10000] ;
-    for (int i = 0; i < T; i++)
+    for (int i=0; i < T; i++)
     {
-        cin >> array1[i] >> array2[i] ;
-    }
-    for (int i = 0; i < T; i++)
-    {
-        if (array1[i]>array2[i])
+        cin >> N >> X;
+        if (N > X)
         {
-            cout << "NO" << endl ;
+            cout << "no" << endl;
         }
-        else
+
+        else if (N <= X)
         {
-            cout << "YES" << endl ;
+            if (X % N == 0)
+            {
+                cout << "YES" << endl;
+            }
+            else
+                cout << "no" << endl;
         }
     }
-    
-    return 0;
 }
