@@ -1,13 +1,36 @@
 
-// https://leetcode.com/problems/find-all-duplicates-in-an-array/
-// Find All Duplicates in an Array
+// Find all duplicate in Array
+// https://leetcode.com/problems/find-all-duplicates-in-an-array/submissions/
 
-#include <iostream>
-using namespace std ;
 
-int main()
-{
-    
-
-    return 0;
-}
+class Solution {
+public:
+    vector<int> findDuplicates(vector<int>& nums)
+    {
+        vector <int> ans ;
+        if (nums.empty())
+        {
+            return {} ;
+        }
+        sort (nums.begin() , nums.end()) ;
+        int s = nums[0] ;
+        for (int i = 1; i< nums.size() ; i++)
+        {
+            if (!(s^nums[i]))
+            {
+                ans.push_back(nums[i]);
+                i++ ;
+                if (i < nums.size())
+                {
+                    s = nums[i] ;
+                }
+            }
+            else
+            {
+                s = nums[i] ;
+            }
+        }
+        return ans ;
+        
+    }
+};
