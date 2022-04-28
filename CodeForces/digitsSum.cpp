@@ -1,8 +1,4 @@
-#include <iostream>
-#include <cstdio>
-#include <cstring>
-#include <string>
-
+#include <bits/stdc++.h>
 using namespace std ;
 
 int getSum(int n)
