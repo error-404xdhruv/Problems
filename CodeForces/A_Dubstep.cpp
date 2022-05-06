@@ -23,10 +23,7 @@ int main()
             cout << in[i] ;
             temp =0 ;
         }
-        
-        
     }
-    
 
     return 0;
 }
