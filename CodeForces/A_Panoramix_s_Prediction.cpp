@@ -1,17 +1,17 @@
 #include <bits/stdc++.h>
-using namespace std ;
+using namespace std;
 
-bool isPrime (int n)
+bool isPrime(int n)
 {
     int count = 0;
     for (int i = 2; i < n; i++)
     {
-        if (n%i==0)
+        if (n % i == 0)
         {
-            count++ ;
+            count++;
         }
     }
-    if ((count==0 && n!=1) || n==2 || n==3)
+    if ((count == 0 && n != 1) || n == 2 || n == 3)
     {
         return 1;
     }
@@ -19,20 +19,19 @@ bool isPrime (int n)
     {
         return 0;
     }
-    
 }
 
 int main()
 {
     int n, m;
-    cin >> n >> m ;
-    if (isPrime(m)==0)
+    cin >> n >> m;
+    if (isPrime(m) == 0)
     {
         cout << "NO" << endl;
     }
     else
     {
-        for (int i = n+1; i < m; i++)
+        for (int i = n + 1; i < m; i++)
         {
             if (isPrime(i))
             {
@@ -40,9 +39,9 @@ int main()
                 goto end;
             }
         }
-        cout << "YES" << endl ;
+        cout << "YES" << endl;
     }
-    
-    end:
+
+end:
     return 0;
 }

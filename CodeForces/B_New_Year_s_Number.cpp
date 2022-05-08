@@ -1,12 +1,12 @@
 
 // https://codeforces.com/problemset/problem/1475/B
 #include <iostream>
-using namespace std ;
+using namespace std;
 void doWork()
 {
     int n;
     cin >> n;
-    if (n%2020<= n/2020)
+    if (n % 2020 <= n / 2020)
     {
         cout << "YES" << endl;
     }
