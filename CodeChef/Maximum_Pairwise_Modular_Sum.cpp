@@ -36,9 +36,9 @@ int main()
             ans.push_back(arr[i] + arr[e] + calculateMod(arr[i], arr[e], m));
         }
                 
-        sort(ans.begin(), ans.end());
-        l size = ans.size();
-        cout << ans[size - 1] << endl;
+        sort(ans.begin(), ans.end(), greater <int>());
+        
+        cout << ans[0] << endl;
     }
 
     return 0;
