@@ -1,24 +1,36 @@
 #include <bits/stdc++.h>
 #define l long long
+#define vl vector<long long> 
+#define vi vector<int> 
+#define vp vector<vector<int>> 
 using namespace std ;
 
 int main()
 {
-    l t ;
-    cin >> t ;
-    
-    while (t--)
+    int n, m ;
+    cin >> n >> m ;
+    if (n%m==0)
     {
-        l n ;
-        l x ;
-        cin >> n ;
-        l temp ;
-        for (l k=2; n%temp!=0; k++)
+        for (int i = 0; i < m; i++)
         {
-            temp = pow(2, k)-1 ;
+            cout << n/m << " " ;
         }
-        x = n/temp ;
-        cout << x << endl ;
+        cout << "\n" ;
+    }
+    else
+    {
+        while (n%m>0)
+        {
+            cout << n/m << " " ;
+            n -= n/m ;
+            m-- ;
+        }
+        for (int i = 0; i < m; i++)
+        {
+            cout << n/m << " " ;
+        }
+        
+        
     }
     
     return 0;
